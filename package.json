@@ -1,0 +1,38 @@
+{
+  "name": "lambda-layer-git",
+  "version": "0.0.0",
+  "description": "An AWS lambda layer with git binaries",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botbits/lambda-layer-git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/botbits/lambda-layer-git/issues"
+  },
+  "homepage": "https://github.com/botbits/lambda-layer-git#readme",
+  "author": "BotBits (sm) (https://github.com/botbits)",
+  "keywords": [
+    "git",
+    "lambda",
+    "layer",
+    "aws",
+    "binary",
+    "serverless",
+    "bin-minify",
+    "lambda-bin"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "./node_modules/.bin/webpack",
+    "test-with-coverage": "nyc npm test && nyc report --reporter=text-lcov > ./lcov.info"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lambda-bin": "^0.0.0",
+    "eslint": "^5.4.0",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2"
+  }
+}

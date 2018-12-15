@@ -1,0 +1,24 @@
+service: lambda-layer-git
+provider:
+  name: aws
+  region: us-east-1
+
+layers:
+  git:
+    path: ../lambda-layer-git # using '.' clips first 2 characters
+    description: Add git binaries to your lambda function (git v2.13.5)
+    compatibleRuntimes:
+      - nodejs4.3
+      - nodejs6.10
+      - nodejs8.10
+    licenseInfo: MIT
+    allowedAccounts:
+      - '*'
+    package:
+      exclude:
+        - ./**
+      include:
+        - bin/**
+        - nodejs/**
+        - LICENSE
+        - README.md
