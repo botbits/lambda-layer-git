@@ -1,6 +1,6 @@
-# lambda-git
+# lambda-layer-git
 [![NPM Version](https://img.shields.io/npm/v/lambda-layer-git.svg)](https://www.npmjs.com/package/lambda-layer-git)
-[![Build Status](https://travis-ci.org/botbits/lambda-layer-git.svg?branch=master)](https://travis-ci.org/botbits/lambda-layer-git)
+[![Build Status](https://travis-ci.com/botbits/lambda-layer-git.svg?branch=master)](https://travis-ci.com/botbits/lambda-layer-git)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dcc40ac5b08c4819b479da893c3ae9fa)](https://www.codacy.com/app/marcelobern/lambda-layer-git?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=botbits/lambda-layer-git&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/botbits/lambda-layer-git/badge.svg?branch=master)](https://coveralls.io/github/botbits/lambda-layer-git?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/botbits/lambda-layer-git/badge.svg?targetFile=package.json)](https://snyk.io/test/github/botbits/lambda-layer-git?targetFile=package.json)
