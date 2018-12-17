@@ -8,9 +8,9 @@ matrix:
         - npm run-script test-with-coverage
 
 node_js: # including only nodejs version supported by Lambda
-  - 4.3
-  - 6.10
-  - 8.10
+  - '4.3'
+  - '6.10'
+  - '8.10'
 
 cache:
   directories:
