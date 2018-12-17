@@ -6,6 +6,10 @@
 
 > Add git binaries to AWS Lambda layer.
 
+## Stable Release
+
+You are reading the documentation for the next release of lambda-layer-git, which should be 0.1.0. Please see [CHANGELOG](CHANGELOG.md) and make sure to read [UPGRADING](UPGRADING.md) when upgrading from a previous version. The current stable release is [0.0.1](https://github.com/botbits/lambda-layer-git/tree/v0.0.1).
+
 ## Overview
 
 This module allows loading `git` (version 2.13.5) as an [AWS Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) so it can be used within you Lambda function (e.g. through [`simple-git`](https://www.npmjs.com/package/simple-git)).
@@ -64,7 +68,7 @@ layers:
 
 ## Using
 
-Once a Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
+Once your Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
 
 Invoke the `lambda-layer-git` module as follows:
 

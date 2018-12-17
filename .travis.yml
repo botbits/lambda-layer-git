@@ -1,0 +1,23 @@
+language: node_js
+
+matrix:
+  include:
+    - node_js: node
+      script:
+        - npm run-script lint
+        - npm run-script test-with-coverage
+
+node_js: # including only nodejs version supported by Lambda
+  - 4.3
+  - 6.10
+  - 8.10
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm config set spin false
+
+after_success:
+  - cat ./lcov.info | ./node_modules/coveralls/bin/coveralls.js
