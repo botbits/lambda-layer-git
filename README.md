@@ -1,10 +1,44 @@
-# lambda-git
+# lambda-layer-git
 [![NPM Version](https://img.shields.io/npm/v/lambda-layer-git.svg)](https://www.npmjs.com/package/lambda-layer-git)
+[![Build Status](https://travis-ci.com/botbits/lambda-layer-git.svg?branch=master)](https://travis-ci.com/botbits/lambda-layer-git)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dcc40ac5b08c4819b479da893c3ae9fa)](https://www.codacy.com/app/marcelobern/lambda-layer-git?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=botbits/lambda-layer-git&amp;utm_campaign=Badge_Grade)
+[![Coverage Status](https://coveralls.io/repos/github/botbits/lambda-layer-git/badge.svg?branch=master)](https://coveralls.io/github/botbits/lambda-layer-git?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/botbits/lambda-layer-git/badge.svg?targetFile=package.json)](https://snyk.io/test/github/botbits/lambda-layer-git?targetFile=package.json)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbotbits%2Flambda-layer-git.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbotbits%2Flambda-layer-git?ref=badge_shield)
 
 > Add git binaries to AWS Lambda layer.
+
+## Deprecation Notice
+
+Consider using [git-lambda-layer](https://github.com/lambci/git-lambda-layer/) instead, as it is compatible with all AWS runtimes (languages).
+
+If you prefer to run git in a layer you have visibility (control) into run the following commands:
+
+```shell
+git clone https://github.com/lambci/git-lambda-layer.git
+./publish.sh
+```
+
+In case you are using the [`serverless` framework](https://serverless.com/), your `git` lambda layer can be created by using a `serverless.yml` file with the following contents:
+
+```yml
+service: git-lambda-layer
+provider:
+  name: aws
+  region: us-east-1
+
+layers:
+  git:
+    path: ../git-lambda-layer # using '.' clips first 2 characters
+    description: Add git binaries to your lambda function
+    licenseInfo: MIT
+    allowedAccounts:
+      - 'YOUR_AWS_ACCOUNT_ID' # use '*' to give permission to all AWS accounts
+    package:
+      artifact: layer.zip
+```
+
+Once your Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
 
 ## Overview
 
@@ -64,7 +98,7 @@ layers:
 
 ## Using
 
-Once a Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
+Once your Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
 
 Invoke the `lambda-layer-git` module as follows:
 
