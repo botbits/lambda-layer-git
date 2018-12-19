@@ -8,9 +8,37 @@
 
 > Add git binaries to AWS Lambda layer.
 
-## Stable Release
+## Deprecation Notice
 
-You are reading the documentation for the next release of lambda-layer-git, which should be 0.1.0. Please see [CHANGELOG](CHANGELOG.md) and make sure to read [UPGRADING](UPGRADING.md) when upgrading from a previous version. The current stable release is [0.0.1](https://github.com/botbits/lambda-layer-git/tree/v0.0.1).
+Consider using [git-lambda-layer](https://github.com/lambci/git-lambda-layer/) instead, as it is compatible with all AWS runtimes (languages).
+
+If you prefer to run git in a layer you have visibility (control) into run the following commands:
+
+```shell
+git clone https://github.com/lambci/git-lambda-layer.git
+./publish.sh
+```
+
+In case you are using the [`serverless` framework](https://serverless.com/), your `git` lambda layer can be created by using a `serverless.yml` file with the following contents:
+
+```yml
+service: git-lambda-layer
+provider:
+  name: aws
+  region: us-east-1
+
+layers:
+  git:
+    path: ../git-lambda-layer # using '.' clips first 2 characters
+    description: Add git binaries to your lambda function
+    licenseInfo: MIT
+    allowedAccounts:
+      - 'YOUR_AWS_ACCOUNT_ID' # use '*' to give permission to all AWS accounts
+    package:
+      artifact: layer.zip
+```
+
+Once your Lambda layer is created, it should be [referenced in your lambda function](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path).
 
 ## Overview
 
